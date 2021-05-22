@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tvTitle">20dp</dimen>
+    <dimen name="tvEt">16dp</dimen>
+    <dimen name="marginTop">30dp</dimen>
+    <dimen name="marginLeft">50dp</dimen>
+    <dimen name="marginRight">50dp</dimen>
+</resources>
