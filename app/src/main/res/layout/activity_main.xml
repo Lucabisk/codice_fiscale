@@ -137,13 +137,13 @@
             android:id="@+id/rbM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="sesso maschile" />
 
         <RadioButton
             android:id="@+id/rbF"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="sesso femminile" />
 
     </RadioGroup>
 
@@ -197,6 +197,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvProv" />
 
     <ImageButton
+        android:id="@+id/ibGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/marginTop"
