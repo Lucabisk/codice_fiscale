@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CodiceFiscale">
         <activity android:name=".MainActivity">
+            android:screenOrientation="nosensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".showActivity">
+            android:screenOrientation="nosensor">
+
         </activity>
     </application>
 

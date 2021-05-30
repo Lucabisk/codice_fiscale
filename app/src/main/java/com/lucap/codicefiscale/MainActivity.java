@@ -2,7 +2,9 @@ package com.lucap.codicefiscale;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         rgSex = findViewById(R.id.radioGroup);
         ibGo = findViewById(R.id.ibGo);
+        ibGo.setOnClickListener(this);
     }
 
     @Override
@@ -74,6 +77,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sc = specialCharacters(s+f+d+c);
         CF = s+f+d+c+sc;
         //call new activity to show the cf
+        Intent intent = new Intent(MainActivity.this, showActivity.class);
+        intent.putExtra("cf", CF);
+        startActivity(intent);
     }
 
     private String secondName(String S){
@@ -151,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(sex.equals("m"))
             d += day;
         else{
-            d += String.valueOf(Integer.parseInt("day") + 40);
+            d += String.valueOf(Integer.parseInt(day) + 40);
         }
 
         return d;
@@ -192,12 +198,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private String country(String com, String prov){
         String c = "";
         //
-        return c;
+        return "A123";
     }
 
     private String specialCharacters(String S){
         String sc = "";
         //
-        return sc;
+        return "W";
     }
 }
