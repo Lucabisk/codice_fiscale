@@ -1,6 +1,7 @@
 package com.lucap.codicefiscale;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +13,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TimerTask;
+
+import com.lucap.codicefiscale.database.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -23,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioButton rbSex;
     private ImageButton ibGo;
     private String sex = "";
+
+    private ComuniDatabase db;
 
 
 
@@ -42,7 +48,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rgSex = findViewById(R.id.radioGroup);
         ibGo = findViewById(R.id.ibGo);
         ibGo.setOnClickListener(this);
+
+        createDB();
     }
+
+    private void createDB() {
+
+        db = Room.databaseBuilder(getApplicationContext(), ComuniDatabase.class,"comuni.db")
+                .createFromFile(new File("comuni.db"))
+                .allowMainThreadQueries()
+                .build();
+    }
+
 
     @Override
     protected void onResume() {
@@ -196,9 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private String country(String com, String prov){
-        String c = "";
-        //
-        return "A123";
+        return db.comuniDAO().getCc(com);
     }
 
     private String specialCharacters(String S){
