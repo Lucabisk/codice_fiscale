@@ -3,6 +3,7 @@ package com.lucap.codicefiscale.database;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -11,6 +12,7 @@ import androidx.room.PrimaryKey;
 public class Comuni implements Parcelable {
 
     @PrimaryKey(autoGenerate = false)
+    @NonNull
     @ColumnInfo(name="Comune")
     String Comune;
 

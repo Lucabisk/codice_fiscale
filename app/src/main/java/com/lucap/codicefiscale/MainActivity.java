@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void createDB() {
 
         db = Room.databaseBuilder(getApplicationContext(), ComuniDatabase.class,"comuni.db")
-                .createFromFile(new File("comuni.db"))
+                .createFromAsset("databases/comuni.db")
                 .allowMainThreadQueries()
                 .build();
     }
@@ -213,7 +213,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private String country(String com, String prov){
-        return db.comuniDAO().getCc(com);
+        Log.d("DIO", db.comuniDAO().getCc(com));
+        return "A123";
     }
 
     private String specialCharacters(String S){
