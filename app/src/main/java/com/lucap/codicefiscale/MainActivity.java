@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private String country(String com, String prov){
-        Log.d("DIO", db.comuniDAO().getCc(com));
+        Log.d("DIO", db.comuniDAO().getCc(com).length());
         return "A123";
     }
 

@@ -13,7 +13,7 @@ public interface Comuni_DAO {
     @Query("SELECT * FROM comuni")
     List<Comuni> getAll();
 
-    @Query("SELECT CodiceCatastale FROM Comuni WHERE Comune IN (:com)")
+    @Query("SELECT CodiceCatastale FROM Comuni WHERE Comune=:com")
     String  getCc(String com);
 
 }
